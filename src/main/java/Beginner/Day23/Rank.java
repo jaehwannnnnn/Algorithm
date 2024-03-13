@@ -3,7 +3,7 @@ package Beginner.Day23;
 import java.util.Arrays;
 
 public class Rank {
-    import java.util.*;
+
 
     class Solution {
         public int[] solution(int[][] score) {
