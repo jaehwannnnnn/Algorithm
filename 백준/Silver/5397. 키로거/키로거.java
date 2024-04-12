@@ -1,15 +1,20 @@
 
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 import java.util.Stack;
 
 public class Main {
-    public static void main(String[] args) {
-        Scanner s = new Scanner(System.in);
-        int count = Integer.parseInt(s.nextLine());
-        String[] strings = new String[count];
-        for (int i = 0; i < strings.length; i++) {
-            strings[i] = s.nextLine();
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int count = Integer.parseInt(br.readLine());  // 첫 번째 줄에서 입력된 숫자를 읽고 정수로 변환
+        String[] strings = new String[count];        // 입력된 숫자만큼 문자열 배열을 생성
+
+        for (int i = 0; i < count; i++) {
+            strings[i] = br.readLine();  // 각 줄을 읽어 문자열 배열에 저장
         }
         String[] answer = new String[count];
 
