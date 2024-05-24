@@ -3,15 +3,15 @@ import java.util.*;
 class Solution {
     public Integer[][] solution(int[][] data, String ext, int val_ext, String sort_by) {
         List<List<Integer>> outerList = new ArrayList<>();
-        int a = 0;
+        int k = 0;
         if(ext.equals("date")){
-            a =1;
+            k =1;
         }else if(ext.equals("maximum")){
-            a =2; 
+            k =2; 
         }else if(ext.equals("remain")){
-            a = 3;
+            k = 3;
         }else{
-            a= 0;
+            k= 0;
         }
         if(sort_by.equals("date")){
             sort_by = "column_1";
@@ -23,7 +23,7 @@ class Solution {
             sort_by = "column_0";
         }
         for (int i = 0; i < data.length; i++) {
-            if (data[i][a] < val_ext) {  // 데이터 필터링 조건을 수정
+            if (data[i][k] < val_ext) {  // 데이터 필터링 조건을 수정
                 List<Integer> innerList = new ArrayList<>();
                 for (int j = 0; j < data[i].length; j++) {
                     innerList.add(data[i][j]);
