@@ -2,11 +2,10 @@ import java.io.*;
 class Main {
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String input1 = br.readLine();
-		int[] intarr = new int[Integer.parseInt(input1)];
+		int T = Integer.parseInt(br.readLine());
+		int[] intarr = new int[T];
 		for(int i=0;i<intarr.length;i++){
-			String input2 = br.readLine();
-			String[] strarr = input2.split(" ");
+			String[] strarr = br.readLine().split(" ");
 			if(strarr[1].equals("+")){
 				intarr[i] = Integer.parseInt(strarr[0]) + Integer.parseInt(strarr[2]);
 			}else if(strarr[1].equals("-")){
@@ -17,10 +16,10 @@ class Main {
 				intarr[i] = Integer.parseInt(strarr[0]) / Integer.parseInt(strarr[2]);
 			}
 		}
-		int answer = 0;
+		int sum = 0;
 		for(int i=0;i<intarr.length;i++){
-			answer += intarr[i];
+			sum += intarr[i];
 		}
-		System.out.println(answer);
+		System.out.println(sum);
 	}
 }
