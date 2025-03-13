@@ -26,8 +26,17 @@ class Main {
 				visited[position[0]][position[1]] = true;
         while (true) {
 						String command = board[position[0]][position[1]];
-            int step = Integer.parseInt(command.replaceAll("[^0-9]", ""));
-            char direction = command.replaceAll("[^UDLR]", "").charAt(0);            
+						StringBuilder sb = new StringBuilder();
+						char direction = ' ';
+						for(int i=0;i<command.length();i++){
+							char c = command.charAt(i);
+							if(Character.isDigit(c)){
+								sb.append(c);
+							}else{
+								direction = c;
+							}
+						}
+						int step = Integer.parseInt(sb.toString());
 						for(int i=0;i<step;i++){
 							switch (direction) {
 									case 'L': position[1] = (position[1] - 1 + N) % N; break; 
